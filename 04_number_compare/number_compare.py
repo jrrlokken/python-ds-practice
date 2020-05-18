@@ -10,7 +10,17 @@ def number_compare(a, b):
         >>> number_compare(1, -2)
         'First is greater'
     """
-    if a == b:
+    def isInt(x):
+        try:
+            int(x)
+            return True
+        except ValueError:
+            return False
+
+    if not isInt(a) or not isInt(b):
+        print("a and b must be integers")
+        return None
+    elif a == b:
         return 'Numbers are equal'
     elif a > b:
         return 'First is greater'
